@@ -19,6 +19,13 @@ class DoctorRepository extends ServiceEntityRepository
         parent::__construct($registry, Doctor::class);
     }
 
+    public function getAll() {
+        return $this->
+        createQueryBuilder('d')->
+        getQuery()->
+        getArrayResult();
+    }
+
     // /**
     //  * @return Doctor[] Returns an array of Doctor objects
     //  */

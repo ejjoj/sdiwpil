@@ -14,9 +14,23 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PatientRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
+    public function __construct(ManagerRegistry $registry) {
         parent::__construct($registry, Patient::class);
+    }
+
+    public function getAll() {
+        $qb = $this->createQueryBuilder('p');
+        return $qb->getQuery()->getArrayResult();
+    }
+
+    public function getByID(int $id = 0) {
+        if (!$id)
+            return null;
+        $qb = $this
+            ->createQueryBuilder('p')
+            ->where('p.id = ' . $id);
+
+        return $qb->getQuery()->getResult()[0];
     }
 
     // /**

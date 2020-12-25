@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b6961f0-f292-4d9a-87c1-9dfa540ec834" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Classes/Tools.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Classes/Validate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/DoctorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/doctor/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PatientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PatientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DoctorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DoctorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PatientRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PatientRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,16 +94,21 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1lqVlIKVni6seNEyiARKD7k9kwX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -109,7 +120,14 @@
       <option name="presentableId" value="Default" />
       <updated>1608324765108</updated>
       <workItem from="1608324768524" duration="1859000" />
-      <workItem from="1608370567604" duration="849000" />
+      <workItem from="1608370567604" duration="1630000" />
+      <workItem from="1608379679315" duration="596000" />
+      <workItem from="1608386893819" duration="444000" />
+      <workItem from="1608392566179" duration="8803000" />
+      <workItem from="1608405511636" duration="2046000" />
+      <workItem from="1608453127712" duration="3709000" />
+      <workItem from="1608572980724" duration="5018000" />
+      <workItem from="1608581379881" duration="2765000" />
     </task>
     <servers />
   </component>
@@ -127,5 +145,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
