@@ -45,4 +45,29 @@ class Validate {
             return intval($digits[10]) === $checksum;
         }
     }
+
+    public static function isPassword(string $passwd = '') : bool {
+        if (strlen($passwd)) {
+            $uppercase = preg_match('#[A-Z]+#', $passwd);
+            $lowercase = preg_match('#[a-z]+#', $passwd);
+            $number    = preg_match('#[0-9]+#', $passwd);
+            $specialChars = preg_match('#[\w]+#', $passwd);
+
+            return $uppercase
+                && $lowercase
+                && $number
+                && strlen($passwd) > 7
+                && strlen($passwd) <= 32;
+        }
+        return false;
+    }
+
+    public static function isName(string $name = '') : bool {
+        if (strlen($name) >= 3 && strlen($name) <= 32)
+            return (!preg_match('/\W/', $name)
+                && preg_match('/[a-zA-Z]{3,}/', $name)
+                && !preg_match('/\d/', $name));
+
+        return false;
+    }
 }
