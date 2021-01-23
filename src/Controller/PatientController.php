@@ -137,6 +137,8 @@ class PatientController extends AbstractController {
         else
             return $this->json([], 404);
 
+        if (!$patient)
+            return $this->json([], 404);
 
         if (isset($content->firstname)
             && !empty($content->firstname))
@@ -190,11 +192,32 @@ class PatientController extends AbstractController {
             && !empty($content->marital_state))
             $patient->setMaritalState(htmlspecialchars($content->marital_state));
 
-        if (!empty($errors)) {
+        if (empty($errors)) {
             $this->getDoctrine()->getManager()->flush();
             return $this->json(['msg' => 'Successfully updated patient', 'id_patient' => $patient->getId()], 200);
         }
 
         return $this->json(['errors' => $errors], 400);
+    }
+
+    /**
+     * @Route("/delete/{id}", name="patient_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function delete(Request $request, int $id = 0) : Response {
+        if ($id)
+            $patient = $this->getDoctrine()->getRepository(Patient::class)->getByID($id);
+        else
+            return $this->json([], 404);
+
+        if (!$patient)
+            return $this->json([], 404);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($patient);
+        $em->flush();
+        return $this->json([], 204);
     }
 }

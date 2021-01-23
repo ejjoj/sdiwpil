@@ -35,7 +35,7 @@ class Patient
     private $lastname;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $pesel_number;
 
@@ -93,6 +93,11 @@ class Patient
      * @ORM\OneToOne(targetEntity=Visit::class, mappedBy="patient", cascade={"persist", "remove"})
      */
     private $visit;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $username;
 
     public function __construct()
     {
@@ -316,6 +321,18 @@ class Patient
         }
 
         $this->visit = $visit;
+
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
 
         return $this;
     }
